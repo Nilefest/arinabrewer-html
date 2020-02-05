@@ -1,0 +1,491 @@
+/*
+ * For ALL pages.
+ * In this document:
+ * 
+ *  *, body
+ *  ul, li
+ *  container, content, header logo, header main
+ *  Menu: main, mobile
+ *  Footer, contact, contact mobile
+ *  
+ *  media max 1199px: container, content
+ *  media max 991px: container, header main
+ *  media max 500px: menu main, header_main, contact, contact mobile, footer, menu mobile
+ *  
+*/
+
+* {
+    color: #ffa5b5;
+    font-family: 'Montserrat', 'Calibri';
+    position: relative;
+    transition: all .5s;
+    transition-timing-function: ease-in-out;
+}
+
+body {
+    background-color: #272f41;
+}
+
+ul {
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+/* CONTAINER */
+.container {
+    width: 1200px;
+    margin: 0px auto;
+    padding: 0px 20px;
+    box-shadow: inset 0px 0px 5vw 8vw #272f41;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.container > header {
+    height: 130px;
+    width: inherit;
+    padding-top: 20px;
+    position: fixed;
+    top: 0px;
+}
+
+/* HEADER Logo */
+.logo {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffa5b5;
+    padding: 3px;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.logo::after {
+    color: #ffa5b5;
+    content: '©';
+    position: absolute;
+    top: -7px;
+    right: -17px;
+    font-size: 15px;
+}
+
+.logo:hover,
+.logo:hover::after {
+    opacity: 1;
+}
+
+.logo .img {
+    background-image: url(../img/logo_new_color.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER Main */
+a.header_main {
+    position: absolute;
+    color: #ffa5b5;
+    font-family: 'Allura';
+    font-size: 30px;
+    opacity: 0.8;
+    transform: rotate(-90deg);
+    margin-top: 45px;
+    margin-right: 20px;
+    right: 0px;
+}
+
+a.header_main::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #ffa5b5;
+    width: 200px;
+    top: 50%;
+}
+
+a.header_main:hover {
+    text-decoration: none;
+    opacity: 1;
+    margin-top: 70px;
+}
+
+a.header_main:hover::after {
+    opacity: 1;
+}
+
+/* CONTENT */
+.content {
+    margin-top: 140px;
+    padding: 0px 130px 0px;
+}
+
+/* MENU Global */
+.nav_menu {
+    display: flex;
+}
+
+
+.nav_name {
+    color: #000;
+    font-size: 150px;
+    opacity: 0.1;
+    font-family: 'Montserrat';
+    font-weight: bolder;
+    letter-spacing: 15px;
+    transform: rotate(-90deg);
+    position: relative;
+    margin-right: -300px;
+    line-height: 100px;
+    top: 0px;
+}
+
+.nav_num {
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    top: 5px;
+}
+
+.nav_menu li {
+    margin-top: 20px;
+}
+
+.nav_menu li:hover {
+    transform: skew(-15deg, 0);
+    padding-left: 15px;
+}
+
+.nav_menu li:hover a {
+    text-decoration: none;
+}
+
+.nav_el_title {
+    font-size: 70px;
+    line-height: 65px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav_el_title::before {
+    position: absolute;
+    content: '';
+    border-bottom: 2px solid #ffa5b5;
+    bottom: -5px;
+    width: 0px;
+    transition: all .5s;
+}
+
+/* Contact */
+.contact {
+    position: fixed;
+    bottom: 0px;
+}
+
+.contact a,
+.contact_footer_mobile a {
+    color: #ffa5b5;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.contact a:hover,
+.contact_footer_mobile a:hover {
+    opacity: 1;
+}
+
+
+.contact_footer_mobile {
+    display: none;
+}
+
+.contact_footer_mobile ul {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.contact_footer_mobile li {
+    text-align: center;
+    width: 35%;
+}
+
+.contact_footer_mobile a {
+    font-size: 26px;
+    opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 200px 0px 70px;
+}
+
+footer a{
+    color: #ffa5b5;
+}
+
+footer .info {
+    font-size: 14px;
+    opacity: 0.8;
+    text-align: center;
+    width: 100%;
+}
+
+/* Menu MOBILE */
+.mobile_nav {
+    margin-left: 100vw;
+    background-color: #fff;
+    position: fixed;
+    z-index: 99;
+    height: 100vh;
+    width: 110vw;
+    top: 0px;
+    left: 0px;
+    padding-top: 70px;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    display: none;
+}
+
+.mobile_nav.open_menu {
+    margin-left: 0vw;
+    transition-timing-function: ease-out;
+}
+
+.mobile_nav.opening_menu {
+    transform: skew(15deg, 0);
+    transition-timing-function: ease;
+}
+
+.mobile_nav.closing_menu {
+    transform: skew(-15deg, 0);
+    transition-timing-function: ease;
+}
+
+.mobile_nav ul {
+    margin: 10vw 15vw;
+}
+
+.mobile_nav li {
+    opacity: 0;
+    margin-left: -50px;
+    margin-top: -10px;
+}
+
+.mobile_nav.open_menu .mobile_menu li:nth-child(1) {
+    transition-delay: .4s;
+}
+
+.mobile_nav.open_menu .mobile_menu li:nth-child(2) {
+    transition-delay: .6s;
+}
+
+.mobile_nav.open_menu .mobile_menu li:nth-child(3) {
+    transition-delay: .8s;
+}
+
+.mobile_nav.open_menu .mobile_menu li:nth-child(4) {
+    transition-delay: 1s;
+}
+
+.mobile_nav.open_menu .mobile_menu li:nth-child(5) {
+    transition-delay: 1.2s;
+}
+
+.mobile_nav.open_menu .mobile_nav_contact li {
+    transition-delay: 1.2s;
+}
+
+.mobile_nav.open_menu li {
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+    transition-duration: .5s;
+}
+
+
+.mobile_nav .mobile_menu li {
+    margin-bottom: 20px;
+}
+
+.mobile_nav .mobile_menu a {
+    color: #000;
+    font-size: 32px;
+    line-height: 30px;
+}
+
+.mobile_nav .mobile_menu a::before {
+    position: absolute;
+    content: '';
+    border-bottom: 2px solid #000;
+    bottom: 0px;
+    width: 0px;
+    transition: all .5s;
+}
+
+.mobile_nav .mobile_menu li:nth-child(2) a::before {
+    bottom: -32px;
+}
+
+.mobile_nav .mobile_menu a:hover {
+    text-decoration: none;
+}
+
+.mobile_nav .mobile_menu a:hover::before {
+    width: 30vw;
+}
+
+.mobile_nav .mobile_nav_contact a {
+    color: #000;
+    opacity: 0.7;
+    font-size: 22px;
+}
+
+
+.mobile_nav .mobile_nav_contact a:hover {
+    opacity: 1;
+}
+
+/* Gamburger */
+.wrapper-menu {
+    width: 50px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 330ms ease-out;
+}
+
+.wrapper-menu.open {
+    transform: rotate(-45deg);
+}
+
+.line-menu {
+    background-color: #ffa5b5;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+}
+
+.line-menu.half {
+    width: 50%;
+}
+
+.line-menu.start {
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: right;
+}
+
+.open .line-menu.start {
+    transform: rotate(-90deg) translateX(3px);
+}
+
+.line-menu.end {
+    align-self: flex-end;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: left;
+}
+
+.open .line-menu.end {
+    transform: rotate(-90deg) translateX(-3px);
+}
+
+.open .line-menu {
+    background-color: #000;
+}
+
+.burger_button {
+    display: none;
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    z-index: 100;
+}
+
+
+@media all and (max-width: 1199px) {
+    .container {
+        width: 992px;
+    }
+
+    .content {
+        margin-top: 140px;
+        padding: 0px 80px 0px;
+    }
+}
+
+@media all and (max-width: 991px) {
+    .container {
+        width: 100%;
+        padding: 0px 5vw;
+    }
+
+    a.header_main {
+        margin-right: 10vw;
+        flex-direction: column;
+    }
+}
+
+
+@media all and (max-width: 767px) {
+
+    .mobile_nav,
+    .burger_button {
+        display: block !important;
+    }
+
+    .header_main {
+        display: none;
+    }
+
+    .content {
+        margin-top: 140px;
+        padding: 0px 10vw 0px;
+    }
+
+    .nav_name {
+        font-size: 120px;
+        letter-spacing: 15px;
+        margin-right: -300px;
+        line-height: 80px;
+        top: 0px;
+    }
+
+    .nav_num {
+        font-size: 15px;
+    }
+
+    .nav_el_title {
+        font-size: 50px;
+        line-height: 55px;
+    }
+
+    .contact {
+        display: none;
+    }
+
+    .contact_footer_mobile {
+        display: block;
+    }
+
+    footer {
+        padding: 100px 0px 70px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .nav_el_title {
+        font-size: 35px;
+        line-height: 55px;
+    }
+
+    .contact_footer_mobile a {
+        font-size: 18px;
+    }
+}

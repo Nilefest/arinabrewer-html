@@ -1,0 +1,251 @@
+/*
+ * For MAIN page.
+ * In this document:
+ * 
+ *  Main: content header, main h1.main_h1
+ *  Menu: catalog
+ *  Block: menu individual, Gallery, gallery h2
+ *  
+ *  media max 991px: menu catalog
+ *  media max 767px: menu catalog, content header, main h1, gallery menu individual
+ *  
+*/
+
+/* CONTENT HEADER */
+.content > header {
+    display: block;
+}
+
+.content > header img {
+    margin-top: 240px;
+    width: 100%;
+}
+
+/* Main H1 */
+h1.main_h1 {
+    margin-top: -30px;
+    font-size: 120px;
+    position: absolute;
+    z-index: 9;
+}
+
+h1.main_h1 div {
+    line-height: 115px;
+    display: flex;
+}
+
+h1.main_h1 div:first-child {
+    font-weight: 300;
+}
+
+h1.main_h1 div:last-child span {
+    font-family: 'Conv_Cyrvetica-Extra-Outline';
+    font-weight: lighter;
+    letter-spacing: 7px;
+}
+
+h1.main_h1 span {
+    display: block;
+    transition: all .8s;
+}
+
+h1.main_h1 span:nth-child(2) {
+    margin-top: 0px;
+}
+
+/* MENU Catalog */
+.catalog_info {
+    display: flex;
+    padding: 130px 0px;
+}
+
+.catalog_block {
+    font-size: 24px;
+    line-height: 28px;
+    width: 25%;
+    margin-top: 50px;
+}
+
+.catalog_info .catalog_block:nth-child(1) {
+    opacity: 0.9;
+    margin-top: 0px;
+    width: 40%;
+}
+
+.catalog_info .catalog_block:nth-child(2) {
+    width: 40%;
+}
+
+.catalog_block a {
+    font-size: 20px;
+    color: #ffa5b5;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.catalog_block a::before {
+    position: absolute;
+    content: '';
+    width: 50px;
+    border-bottom: 2px solid #ffa5b5;
+    bottom: -15px;
+    transition: all .5s;
+}
+
+.catalog_block a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.catalog_block a:hover::before {
+    transition: all .5s;
+    width: 80px;
+    opacity: 1;
+}
+
+/* GALLERY */
+h2 {
+    font-weight: lighter;
+    font-size: 28px;
+    padding: 20px 0px;
+}
+
+.gallery {
+    z-index: -1;
+}
+
+.gallery ul {
+    display: flex;
+    margin-left: -900px;
+}
+
+.gallery_img {
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 430px;
+    width: 900px;
+}
+
+.gallery_slide {
+    width: 20%;
+    height: 440px;
+    position: absolute;
+    z-index: 999;
+    margin-top: -450px;
+}
+
+.gallery_perv {
+    width: 25%;
+    left: -10%;
+}
+
+.gallery_next {
+    width: 35%;
+    right: -10%;
+}
+
+.gallery_open {
+    width: 60%;
+    left: 20%;
+}
+
+/* INDIVIDUAL info */
+.individual_info {
+    display: flex;
+    margin: 100px 0px;
+}
+
+.individual_block {
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 60px;
+    font-weight: lighter;
+    width: 50%;
+}
+
+.individual_info .individual_block:first-child {
+    font-weight: bold;
+    width: 40%;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 2px;
+}
+
+@media all and (max-width: 991px) {
+
+    .catalog_info .catalog_block:nth-child(2) a::before {
+        bottom: -35px;
+    }
+}
+
+@media all and (max-width: 767px) {
+
+    .catalog_info .catalog_block:nth-child(2) a::before {
+        bottom: -15px;
+    }
+
+    h1.main_h1 {
+        margin-top: 20px;
+        font-size: 15vw;
+    }
+
+    h1.main_h1 div {
+        line-height: 14vw;
+    }
+
+    .content > header img {
+        margin-top: 240px;
+        margin-left: -15vw;
+        width: 100vw;
+    }
+
+    .catalog_info {
+        flex-direction: column;
+    }
+
+    .catalog_block {
+        font-size: 48px;
+        line-height: 45px;
+        width: 90% !important;
+        margin-top: 30px;
+    }
+
+    .gallery ul {
+        margin-left: -450px;
+    }
+
+    .gallery_img {
+        height: 215px;
+        width: 450px;
+    }
+
+    .gallery_slide {
+        width: 20%;
+        height: 440px;
+        margin-top: -450px;
+    }
+
+    .individual_info {
+        flex-direction: column;
+    }
+
+    .individual_block {
+        font-size: 24px;
+        line-height: 26px;
+        padding-right: 20px;
+        width: 90%;
+        margin-bottom: 40px;
+        opacity: 0.8;
+    }
+
+    .individual_info .individual_block:first-child {
+        width: 90%;
+        font-weight: 300;
+        font-size: 48px;
+        line-height: 45px;
+        margin-bottom: 50px;
+    }
+
+}

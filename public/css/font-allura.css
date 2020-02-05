@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Allura';
+    src: local('Allura'), local('Allura-Regular'), url('../font/Allura/Allura.woff2') format('woff2'), url('../font/Allura/Allura.woff') format('woff'), url('../font/Allura/Allura.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
