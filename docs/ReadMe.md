@@ -1,10 +1,9 @@
 # Arinabrever site
 
 ---- 
-Old project, only frontend. Don`t finished
+Old project (2020), only frontend. Don`t finished
 
 ----
-
 
 #  | DLM*| Page
 ---|-----|----------------------
